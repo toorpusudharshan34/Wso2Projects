@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/move" name="MoveFile" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <file.move configKey="MY_LOCAL_FILE">
+                <sourcePath>C:\Users\toorp\OneDrive\Documents\mine</sourcePath>
+                <targetPath>C:\Users\toorp\OneDrive\Documents\yours</targetPath>
+                <createParentDirectories>true</createParentDirectories>
+                <includeParent>false</includeParent>
+                <overwrite>false</overwrite>
+                <filePattern>.*.txt</filePattern>
+            </file.move>
+            <log level="full" separator="$$$$$$$$$"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
